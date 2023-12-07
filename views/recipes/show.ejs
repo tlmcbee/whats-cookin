@@ -3,13 +3,13 @@
   <section id="show-page">
     <% if (user?._id.equals(recipe.user)) { %>
       <a href="/recipes/<%= recipe._id %>/edit">Edit Recipe</a>
-      <% } %>
-      <br><br>
+    <% } %>
+    <br><br>
+    <div>Added By: <span><%= recipe.addedBy%></span> on <span> <%= recipe.createdAt.toLocaleDateString() %> </span></div>
     <div>Title:</div>
     <div><%= recipe.title %></div>
     <div>Cuisine</div>
     <div><%= recipe.cuisine %></div>
-    <div>Added By: <span><%= recipe.addedBy%> <%= recipe.userAvatar %></span> on <span> <%= recipe.createdAt.toLocaleDateString() %> </span></div>
     <div>Ingredients:</div>
     <div><%= recipe.ingredients %></div>
     <div>Method:</div>
@@ -18,9 +18,59 @@
     <% if (user?._id.equals(recipe.user)) { %>
       <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
         <button type="submit">X</button>
+      </form>
     <% } %>
   </section>
+  <% if(user) { %>
+  <br><br><h2>Leave a review!</h2>
+  <form id="add-review-form" action="/recipes/<%= recipe._id %>/reviews" method="POST">
+  <label>Review:</label>
+  <textarea name="content"></textarea>
+  <label>Did you make this</label>
+  <select name="made">
+    <option value="YES">YES</option>
+    <option value="NO">NO</option>
+  </select>
+  <label>Rating:</label>
+  <select name="rating">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5" selected>5</option>
+  </select>
+  <input type="submit" value="Add Review">
+  </form>
+  <% } %>
+  <% if (recipe.reviews.length) {%>
+    <table>
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Date</th>
+          <th>Review</th>
+          <th>Made It</th>
+          <th>Rating</th>
+          <th></th>
+        </tr>
+      </thead>
+    <tbody>
+      <% recipe.reviews.forEach(function(r) {%>
+        <tr>
+          <td class="review-user"><img alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer" ><%= r.userName %></td>
+          <td><%= r.createdAt.toLocaleDateString() %></td>
+          <td><%= r.content %></td>
+          <td><%= r.made %></td>
+          <td><%= r.rating %></td>
+        </tr>
+      <%}) %>
+    </tbody>
+  </table>
+  <% } else { %>
+  <h5>No Reviews</h5>
+  <% } %>
 
-    
+
+  
 
 <%- include('../partials/footer') %>
