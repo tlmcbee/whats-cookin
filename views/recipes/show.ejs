@@ -1,0 +1,21 @@
+<%- include('../partials/header') %>
+
+  <section id="show-page">
+    <div>Title:</div>
+    <div><%= recipe.title %></div>
+    <div>Cuisine</div>
+    <div><%= recipe.cuisine %></div>
+    <div>Added By: <span><%= recipe.addedBy%> <%= recipe.userAvatar %></span> on <span> <%= recipe.createdAt.toLocaleDateString() %> </span></div>
+    <div>Ingredients:</div>
+    <div><%= recipe.ingredients %></div>
+    <div>Method:</div>
+    <div><%= recipe.method %></div>
+    <br><br>
+    <% if (user?._id.equals(recipe.user)) { %>
+      <a href="/recipes/<%= recipe._id %>/edit">Edit Recipe</a>
+    <% } %>
+  </section>
+
+    
+
+<%- include('../partials/footer') %>

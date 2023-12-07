@@ -12,7 +12,8 @@ require('./config/database')
 require('./config/passport')
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var recipesRouter = require('./routes/recipes');
+const ensureLoggedIn = require('./config/ensureLoggedIn')
 
 var app = express();
 
@@ -25,6 +26,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('_method'))
 
 app.use(session({
   secret: process.env.SECRET,
@@ -41,7 +43,7 @@ app.use(function (req, res, next) {
 });
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/recipes', recipesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
