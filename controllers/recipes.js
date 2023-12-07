@@ -6,8 +6,8 @@ module.exports = {
   index,
   show,
   edit,
-  update
-  
+  update,
+  delete: deleteRecipe 
 }
 
 async function newRecipe(req, res) {
@@ -38,17 +38,28 @@ async function show(req, res) {
 }
 
 async function edit(req, res) {
-  const recipe = await Recipe.findById(req.params.id)
+  const recipe = await Recipe.findOne( {_id: req.params.id, user: req.user._id})
+  if(!recipe) return res.redirect('/recipes')
   res.render('recipes/edit', { title: 'Edit this Recipe', recipe})
 }
 
 async function update(req, res) {
-  const recipe = await Recipe.findById(req.params.id)
-  try {
-     recipe.update(req.body)
-    res.redirect(`/recipes/${recipe._id}`)
-  } catch(err) {
-    console.logt(err)
+  try{
+    const updatedRecipe = await Recipe.findOneAndUpdate(
+    {_id: req.params.id, user: req.user._id},
+    req.body,
+    {new: true}
+    )
+    return res.redirect(`/recipes/${updatedRecipe._id}`)
+  } catch(err){
+    console.log(err)
     res.render('recipes/edit', { errorMsg: err.message})
   }
+}
+
+async function deleteRecipe(req, res) {
+  await Recipe.findOneAndDelete(
+    {_id: req.params.id, user: req.user._id}
+  )
+  res.redirect('/recipes')
 }
