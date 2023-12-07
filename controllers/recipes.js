@@ -34,7 +34,7 @@ async function index(req, res) {
 
 async function show(req, res) {
   const recipe = await Recipe.findById(req.params.id)
-  res.render('recipes/show', { title: 'Recipes Details' , recipe})
+  res.render('recipes/show', { title: 'Recipe Details' , recipe})
 }
 
 async function edit(req, res) {
