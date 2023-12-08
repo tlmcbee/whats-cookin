@@ -1,16 +1,17 @@
 <%- include('../partials/header') %>
 
+<div class="section-color-pack">
   <form id="new-form" action="/recipes" method="POST">
-    <label>Title:</label>
+    <label class="enbolden">Title:</label>
     <input type="text" name="title">
-    <label>Cuisine:</label>
+    <label class="enbolden">Cuisine:</label>
     <input type="text" name="cuisine">
-    <label>Ingredients</label>
-    <textarea style="white-space: pre;" name="ingredients"></textarea>
-    <label>Method</label>
-    <textarea style="white-space: pre;" name="method"></textarea>
+    <label class="enbolden">Ingredients</label>
+    <textarea cols="20" rows="10" name="ingredients"></textarea>
+    <label class="enbolden">Method</label>
+    <textarea cols="50" rows="10" name="method"></textarea>
+    <br><br>
     <input type="submit" value="Publish Recipe">
-
   </form>
-
+</div>
 <%- include('../partials/footer') %>

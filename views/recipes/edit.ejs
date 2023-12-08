@@ -1,16 +1,19 @@
 <%- include('../partials/header') %>
 
+<div class="section-color-pack">
   <form id="edit-recipe-form" action="/recipes/<%= recipe._id %>?_method=PUT" method="POST">
-    <label>Title:</label>
+    <label class="enbolden">Title:</label>
     <input type="text" name="title" value="<%= recipe.title %>">
-    <label>Cuisine:</label>
+    <label class="enbolden">Cuisine:</label>
     <input type="text" name="cuisine" value="<%= recipe.cuisine %>">
-    <label>Ingredients</label>
-    <textarea style="white-space: pre;" name="ingredients"><%= recipe.ingredients %></textarea>
-    <label>Method</label>
-    <textarea style="white-space: pre;" name="method"><%= recipe.method %></textarea>
+    <label class="enbolden">Ingredients</label>
+    <textarea cols="50" rows="10" name="ingredients"><%= recipe.ingredients %></textarea>
+    <label class="enbolden">Method</label>
+    <textarea cols="100" rows="20"" name="method"><%= recipe.method %></textarea>
+    <br><br>
     <input type="submit" value="Edit Recipe">
 
   </form>
+</div>
 
 <%- include('../partials/footer') %>

@@ -5,22 +5,22 @@
 <% } %>
   <section id="show-page">
     <div class="enbolden">Added By: </div>
-    <div><span class="enbolden"><%= recipe.addedBy%></span> on <span> <%= recipe.createdAt.toLocaleDateString() %> </span></div>
+    <div><strong><%= recipe.addedBy%></strong> on <%= recipe.createdAt.toLocaleDateString() %></div>
     <div class="enbolden">Title:</div>
-    <div><%= recipe.title %></div>
-    <div>Cuisine</div>
+    <div class="enbolden"><%= recipe.title %></div>
+    <div class="enbolden">Cuisine</div>
     <div><%= recipe.cuisine %></div>
-    <div>Ingredients:</div>
-    <div  class="white-space"><%= recipe.ingredients %></div>
-    <div >Method:</div>
+    <div class="enbolden">Ingredients:</div>
+    <div class="white-space"><%= recipe.ingredients %></div>
+    <div class="enbolden">Method:</div>
     <div class="white-space"><%= recipe.method %></div>
     <br><br>
-    <% if (user?._id.equals(recipe.user)) { %>
-      <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
-        <button type="submit">Delete Recipe</button>
-      </form>
-    <% } %>
   </section>
+  <% if (user?._id.equals(recipe.user)) { %>
+    <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
+      <button type="submit">Delete Recipe</button>
+    </form>
+  <% } %>
   <% if(user) { %>
   <br><br><h2>Leave a review!</h2>
   <form id="add-review-form" action="/recipes/<%= recipe._id %>/reviews" method="POST">
@@ -42,6 +42,7 @@
   <input type="submit" value="Add Review">
   </form>
   <% } %>
+  <section id="review-block">
   <% if (recipe.reviews.length) {%>
     <table>
       <thead>
@@ -78,6 +79,7 @@
   <% } else { %>
   <h5>No Reviews</h5>
   <% } %>
+</section>
 
 
   
