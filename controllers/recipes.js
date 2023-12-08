@@ -7,7 +7,8 @@ module.exports = {
   show,
   edit,
   update,
-  delete: deleteRecipe 
+  delete: deleteRecipe,
+  stirPot
 }
 
 async function newRecipe(req, res) {
@@ -62,4 +63,9 @@ async function deleteRecipe(req, res) {
     {_id: req.params.id, user: req.user._id}
   )
   res.redirect('/recipes')
+}
+
+async function stirPot(req, res) {
+  const recipe = await Recipe.aggregate([ { $sample: { size: 1 } } ])
+  res.redirect(`/recipes/${recipe[0]._id}`)
 }

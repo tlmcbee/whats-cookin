@@ -24,6 +24,10 @@ body > nav {
 
 body > main {
   grid-area: main;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 main > img {
@@ -62,4 +66,23 @@ a {
 .review-user img {
   border-radius: 50%;
   height: 40px;
+}
+
+.white-space {
+  white-space: pre-wrap;
+}
+
+#show-page {
+  display: grid;
+  grid-template-columns: 0.5fr 2fr;
+  grid-template-rows: 3vmin 3vmin;
+  gap: 10px;
+  justify-content: start;
+  align-items: start;
+  margin: 0 50vmin;
+}
+
+.enbolden {
+  font-weight: bold;
+  font-size: 20px;
 }

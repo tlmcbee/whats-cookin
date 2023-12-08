@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 const passport = require('passport')
+const recipesCtrl = require('../controllers/recipes')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -29,4 +30,6 @@ router.get('/logout', function(req, res) {
     res.redirect('/')
   })
 })
+
+router.get('/recipes/stir/', recipesCtrl.stirPot)
 module.exports = router;
