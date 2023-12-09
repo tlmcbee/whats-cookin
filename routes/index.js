@@ -32,4 +32,9 @@ router.get('/logout', function(req, res) {
 })
 
 router.get('/recipes/stir/', recipesCtrl.stirPot)
+
+router.get('/about', function(req, res) {
+  res.render('about', { title: 'About'})
+})
+
 module.exports = router;

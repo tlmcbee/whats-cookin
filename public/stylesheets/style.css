@@ -32,6 +32,11 @@ nav > a {
   color: #2B1700;
 }
 
+nav > a:hover {
+  color:#FFFEE0;
+  background-color: #2B1700;
+}
+
 nav >:last-child {
   margin-left: auto;
 }
@@ -58,11 +63,29 @@ footer {
   border-top: 5px solid #2B1700;
 }
 
+footer > a {
+  padding: 10px;
+  font-weight: 700;
+  color: #2B1700;
+  font-family: "Orbitron";
+}
+
+footer > a:hover {
+  color: #fffee0;
+  background-color: #2B1700;
+}
+
 main > a {
+  color: #2B1700;
+  background-color: #FFFEE0;
+  padding: 10px;
+  border: 5px solid #2B1700;
+  border-radius: 10px;
+}
+
+main > a:hover {
   color: #FFFEE0;
   background-color: #2B1700;
-  padding: 10px;
-  border-radius: 10px;
 }
 
 .login {
@@ -133,6 +156,11 @@ main > a {
   font-weight: 500;
 }
 
+#review-block * > a:hover {
+  color: #FFFEE0;
+  background-color: #2B1700;
+}
+
 table {
   font-size: 20px;
 
@@ -187,6 +215,11 @@ table td {
   font-weight: 500;
 }
 
+#index-display * > a:hover {
+  color:#FFFEE0;
+  background-color: #2B1700;
+}
+
 #new-form {
   display: flex;
   flex-direction: column;
@@ -212,8 +245,8 @@ table td {
 }
 
 .color-way {
-  background-color: #2B1700;
-  color:#FFFEE0;
+  background-color: #FFFEE0;
+  color: #2B1700;
 }
 
 #home-greeting {
@@ -222,21 +255,41 @@ table td {
   margin: 25px;
   text-align: center;
   padding: 10px;
-  border: 10px solid #FFFEE0;
+  border: 5px solid #2B1700;
 }
 #pot-message {
   width: 375px;
   height: 80x;
   margin: 25px;
   text-align: center;
+  border: 5px solid #2B1700;
 }
 
 #pot-message > a {
-  color: white;
+  color: #2B1700;
 }
 #pot-message > a:hover {
-  color: black;
-  background-color: white;
+  color: #FFFEE0;
+  background-color: #2B1700;
+}
+
+#about-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 750px;
+  height: 300px;
+  text-align: center;
+  border: 5px solid #2B1700
+}
+
+#about-img {
+  border: 10px solid #2B1700;
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  margin: 50px;
 }
 
 @media only screen and (min-width: 750pxx) {
