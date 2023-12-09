@@ -24,14 +24,14 @@
   <% if(user) { %>
   <br><br><h2>Leave a review!</h2>
   <form id="add-review-form" action="/recipes/<%= recipe._id %>/reviews" method="POST">
-  <label>Review:</label>
+  <label class="enbolden">Review:</label>
   <textarea name="content"></textarea>
-  <label>Did you make this</label>
+  <label class="enbolden">Did you make this</label>
   <select name="made">
     <option value="YES">YES</option>
     <option value="NO">NO</option>
   </select>
-  <label>Rating:</label>
+  <label class="enbolden">Rating:</label>
   <select name="rating">
     <option value="1">1</option>
     <option value="2">2</option>
