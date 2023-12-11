@@ -36,3 +36,7 @@ As a user you have the oppurtunity to add recipes to the database. You can also 
  ## Let's get cooking
  Once you navigate to the page, you can will taken to a home screen. From there you can view the list of recipes and select individuals as well. If you log-in using google credentials you have the option to write recipes, edit/deleter your own recipes. You can also leave a reviews on others recipes.
 
+## Looking toward the future
+In the future there will be plans to add :
+- A feature where you can take recipes that you like and and them to a *My recipe book* tab to manage your own recipes as well as other recipes added from others
+- The ability to add picture sumbission on the *Write a Recipe* page so when the recipe is displayed members will have a visual reference if they choose to make the dish
