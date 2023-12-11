@@ -5,8 +5,12 @@
   have posted. Leave some feedback and let 'em know what you thought!<br><br>
   So you tell me...What's cookin' good lookin'?
 </div>
-<div id="pot-message" class="color-way white-space">Having trouble deciding what to make? 
-<a href="/recipes/stir">-->STIR THE POT<--</a>
-and let us help!</div>
 
+<a href="/recipes/6573525f295e10e825fa1135" class="color-way">View Today's<br>FEATURED RECIPE</a>
+
+<% if (user) { %>
+  <div id="pot-message" class="color-way white-space">Having trouble deciding what to make? 
+  <a href="/recipes/stir">-->STIR THE POT<--</a>
+    and let us help!</div>
+<% } %>
 <%- include('./partials/footer') %>

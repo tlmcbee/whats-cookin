@@ -19,18 +19,19 @@ As a user you have the oppurtunity to add recipes to the database. You can also 
  Click **STIR THE POT** and get a random recipe from the database! :bowl_with_spoon:
 
  ## Some screenshots of the site in action :camera_flash:
+[HOME PAGE](https://i.imgur.com/zbjFzRa.png)
 
-
+[SAMPLE RECIPE](https://i.imgur.com/GnPwDrG.png)
 
 
  ## Core ingredients
  This is a *MEN Stack*. The technologies used are as such:
- -Mongoose
- -MongoDB
- -Express.js
- -Node.js
- -Google's People API
- -Passport.js
+ - Mongoose
+ - MongoDB
+ - Express.js
+ - Node.js
+ - Google's People API
+ - Passport.js
 
  ## Let's get cooking
  Once you navigate to the page, you can will taken to a home screen. From there you can view the list of recipes and select individuals as well. If you log-in using google credentials you have the option to write recipes, edit/deleter your own recipes. You can also leave a reviews on others recipes.
