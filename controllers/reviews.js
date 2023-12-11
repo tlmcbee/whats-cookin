@@ -41,8 +41,6 @@ async function update(req, res) {
   if(!reviewSubdoc.user.equals(req.user._id)) return res.redirect(`/recipes/${recipe._id}`)
   reviewSubdoc.content = req.body.content
   reviewSubdoc.made = req.body.made
-  reviewSubdoc.rating = req.body.rating
-  console.log(reviewSubdoc)
   try {
     await recipe.save()
   } catch(err) {
