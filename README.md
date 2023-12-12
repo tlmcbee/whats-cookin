@@ -26,6 +26,9 @@ As a user you have the oppurtunity to add recipes to the database. You can also 
 
  ## Core ingredients
  This is a *MEN Stack*. The technologies used are as such:
+ - HTML
+ - CSS
+ - JavaScript
  - Mongoose
  - MongoDB
  - Express.js
