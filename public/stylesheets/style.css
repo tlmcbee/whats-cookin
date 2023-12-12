@@ -30,11 +30,13 @@ nav > a {
   padding: 5px 10px;
   font-weight: 700;
   color: #2B1700;
+  text-decoration: none;
 }
 
 nav > a:hover {
   color:#FFFEE0;
   background-color: #2B1700;
+  text-decoration: none;
 }
 
 nav >:last-child {
@@ -47,11 +49,6 @@ main {
   flex-direction: column;
   justify-content: start;
   align-items: center;
-}
-
-main > img {
-  height: 200px;
-  width: 200px
 }
 
 footer {
@@ -68,11 +65,13 @@ footer > a {
   font-weight: 700;
   color: #2B1700;
   font-family: "Orbitron";
+  text-decoration: none;
 }
 
 footer > a:hover {
   color: #fffee0;
   background-color: #2B1700;
+  text-decoration: none;
 }
 
 main > a {
@@ -82,11 +81,13 @@ main > a {
   border: 5px solid #2B1700;
   border-radius: 10px;
   text-align: center;
+  text-decoration: none;
 }
 
 main > a:hover {
   color: #FFFEE0;
   background-color: #2B1700;
+  text-decoration: none;
 }
 
 .login {
@@ -155,11 +156,13 @@ main > a:hover {
 #review-block * > a {
   color: #2B1700;
   font-weight: 500;
+  text-decoration: none;
 }
 
 #review-block * > a:hover {
   color: #FFFEE0;
   background-color: #2B1700;
+  text-decoration: none;
 }
 
 table {
@@ -214,11 +217,13 @@ table td {
 #index-display * > a {
   color: #2B1700;
   font-weight: 500;
+  text-decoration: none;
 }
 
 #index-display * > a:hover {
   color:#FFFEE0;
   background-color: #2B1700;
+  text-decoration: none;
 }
 
 #new-form {
@@ -268,10 +273,13 @@ table td {
 
 #pot-message > a {
   color: #2B1700;
+  text-decoration: none;
 }
+
 #pot-message > a:hover {
   color: #FFFEE0;
   background-color: #2B1700;
+  text-decoration: none;
 }
 
 #about-page {
